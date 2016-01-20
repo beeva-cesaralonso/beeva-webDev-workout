@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 2 - Promises</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+</head>
+<body>
+	<script>
+		var promise = $.get('http://www.timeapi.org/utc/now');
+		promise.then(function(response)
+		{
+			var div_time = document.createElement('div'); 
+			var div_time_content = document.createTextNode(request);
+			div_time.appendChild(div_time_content);
+
+			document.insertBefore(div_time);
+
+		},function(){
+
+			var div_time = document.createElement('div'); 
+			var div_time_content = document.createTextNode('An error ocurred');
+			div_time.appendChild(div_time_content);
+
+			document.body.appendChild(div_time);
+		});
+	</script>
+</body>
+</html>
