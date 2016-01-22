@@ -1,37 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>JS Libraries</title>
-    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="http://momentjs.com/downloads/moment.min.js"></script>
-    <script src="http://underscorejs.org/underscore-min.js"></script>
-    <script src="js/jmespath.min.js"></script>
-    <script src="js/q.min.js"></script>
-</head
-><body>
-    
-    <script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercise Libraries</title>
 
-   
-       var p = $.getJSON('alumno.json');
-       p.then(function (json) {
+    <!-- Bootstrap 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">-->
 
-       	    //debugger;
-            console.log("ok");
-			/*console.log(arguments); 
-			console.log('-----------------------------');
-			console.log(JSON.stringify(arguments,null,2)); */
-			console.log/(arguments);
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-       }, function () {
+</head>
+<body>
 
-			//debugger;
-            /*console.log(arguments); 
-			console.log('-----------------------------');
-			console.log(JSON.stringify(arguments));*/
-            console.log("Error");
-            console.log(JSON.stringify(arguments));
-       });
-    </script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="http://momentjs.com/downloads/moment.min.js"></script>
+<!--<script src="http://underscorejs.org/underscore-min.js"></script>-->
+<script src="js/jmespath.min.js"></script>
+<script src="js/q.min.js"></script>
+
+<script>
+    var alumno = {
+	    nombre: 'Bertín',
+	    apellido: 'Osborne',
+	    edad: 60,
+	    expediente: {
+	        listaAsignaturas: [{
+	            id: 'Mates',
+	            nota: 9,
+	            fechaExamen: '12/02/2015',
+	            lugar: 'GPS'
+	        }, {
+	            id: 'Lengua',
+	            nota: 5,
+	            fechaExamen: '03/01/2016',
+	            lugar: 'GPS'
+	        }, {
+	            id: 'Inglés',
+	            nota: [8, 5],
+	            fechaExamen: '10/06/2015'
+	        }],
+	        informeConducta: {
+	            perfil: 'no conflictivo',
+	            expulsiones: 0
+	        }
+	    }
+	} /*{
+		    nombre: 'Pequeño',
+		    apellido: 'Nicolás',
+	    	edad: 21,
+		    expediente: {
+		        listaAsignaturas: [{
+		            id: 'Historia',
+		            nota: 10,
+		            fechaExamen: '12/02/2015',
+		            lugar: 'GPS'
+		        }, {
+		            id: 'Educación Física',
+		            nota: 1,
+		            fechaExamen: '03/01/2016',
+		            lugar: 'GPS'
+		        }, {
+		            id: 'IinformeConducnglés',
+		            nota: [8, 3],
+		            fechaExamen: '10/06/2015'
+		        }],
+		        informeConducta: {
+		            perfil: 'Inútil',
+		            expulsiones: 999
+		        }
+		    }
+		}, {
+		    nombre: 'Matías',
+		    apellido: 'Prats',
+		    edad: 50,
+		    expediente: {
+		        listaAsignaturas: [{
+		            id: 'Historia',
+		            nota: 10,
+		            fechaExamen: '12/02/2015',
+		            lugar: 'GPS'
+		        }, {
+		            id: 'Educación Física',
+		            nota: 1,
+		            fechaExamen: '03/01/2016',
+		            lugar: 'GPS'
+		        }, {
+		            id: 'Seguros',
+		            nota: 11,
+		            fechaExamen: '10/06/2015'
+		        }, {
+		            id: 'Lengua',
+		            nota: 4,
+		            fechaExamen: '04/11/2015'
+		        }],
+		        informeConducta: {
+		            perfil: 'Insistente',
+		            expulsiones: 0
+		        }
+		    }
+		}
+
+	function getExamDate (obj, idAlum, idAsign) {
+
+		
+	}*/
+
+	//result = alumnos[?edad > `20`].[nombre, apellido]);
+
+	console.log(moment(alumno.);
+
+    //------ EJEMPLO
+	function suma(param1, param2) {
+        var promise = Q.defer();
+
+        setTimeout(function() {
+            promise.resolve(param1 + param2);
+            //promise.reject(new Error(error));
+        }, 10);
+        return promise.promise;
+    };
+
+    function resta(param1, param2) {
+        var promise = Q.defer();
+
+        setTimeout(function() {
+            promise.resolve(param1 - param2);
+            //promise.reject(new Error(error));
+        }, 10);
+        return promise.promise;
+    };
+
+    function producto(param1, param2) {
+        var promise = Q.defer();
+
+        setTimeout(function() {
+            promise.resolve(param1 * param2);
+            //promise.reject(new Error(error));
+        }, 10);
+        return promise.promise;
+    };
+
+    function result(s1, s2, s3) {
+    	return(s1 + s2 + s3);
+    }
+
+    var promise = Q.all([
+
+         suma(1, 2), 
+         resta(1, 2), 
+         producto(1, 2)
+    ]).then( function (promises) {
+         console.log(result(promises[0], promises[1], promises[2]));
+    });
+
+    //TODO gestin de errores
+
+</script>
+
 </body>
 </html>
