@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Libraries</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="js/jmespath.min.js"></script>
+    <script src="js/q.min.js"></script>
+</head
+><body>
+    
+    <script>
+
+   
+       var p = $.getJSON('alumno.json');
+       p.then(function (json) {
+
+       	    //debugger;
+            console.log("ok");
+			/*console.log(arguments); 
+			console.log('-----------------------------');
+			console.log(JSON.stringify(arguments,null,2)); */
+			console.log/(arguments);
+
+       }, function () {
+
+			//debugger;
+            /*console.log(arguments); 
+			console.log('-----------------------------');
+			console.log(JSON.stringify(arguments));*/
+            console.log("Error");
+            console.log(JSON.stringify(arguments));
+       });
+    </script>
+</body>
+</html>

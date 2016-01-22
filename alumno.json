@@ -1,0 +1,92 @@
+[{
+ "nombre": "Bertín",
+ "apellido": "Osborne",
+ "expediente": {
+     "listaAsignaturas": [
+         {
+             "id": "Mates",
+             "nota": 9,
+             "fechaExamen": "fecha",
+             "lugar":  "GPS"
+         },
+         {
+             "id": "Lengua",
+             "nota": 5,
+             "fechaExamen": "fecha",
+             "lugar": "GPS"
+         },
+         {
+             "id": "Inglés",
+             "nota": [8, 5],
+             "fechaExamen": "fecha"
+         }
+     ],
+     "informeConducta": {
+         "perfil": "no conflictivo",
+         "expulsiones": 0
+     }
+ }
+},
+{
+ "nombre": "Pequeño",
+ "apellido": "Nicolás",
+ "expediente": {
+     "listaAsignaturas": [
+         {
+             "id": "Historia",
+             "nota": 10,
+             "fechaExamen": "fecha",
+             "lugar":  "GPS"
+         },
+         {
+             "id": "Educación Física",
+             "nota": 1,
+             "fechaExamen": "fecha",
+             "lugar": "GPS"
+         },
+         {
+             "id": "Inglés",
+             "nota": [8, 3],
+             "fechaExamen": "fecha",
+         }
+     ],
+     "informeConducta": {
+         "perfil": "Inútil",
+         "expulsiones": 999
+     }
+ }
+},
+{
+ "nombre": "Matías",
+ "apellido": "Prats",
+ "expediente": {
+     "listaAsignaturas": [
+         {
+             "id": "Historia",
+             "nota": 10,
+             "fechaExamen": "fecha",
+             "lugar":  "GPS"
+         },
+         {
+             "id": "Educación Física",
+             "nota": 1,
+             "fechaExamen": "fecha",
+             "lugar": "GPS"
+         },
+         {
+             "id": "Seguros",
+             "nota": 11,
+             "fechaExamen": "fecha",
+         },
+         {
+             "id": "Lengua",
+             "nota": 4,
+             "fechaExamen": "fecha",
+         },
+     ],
+     "informeConducta": {
+         "perfil": "Insistente",
+         "expulsiones": 0
+     }
+ }
+}]
