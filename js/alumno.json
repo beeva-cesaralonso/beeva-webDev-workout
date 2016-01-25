@@ -1,0 +1,28 @@
+{
+    "nombre": "Bertin",
+    "apellido": "Osborne",
+    "expediente": {
+
+        "informeConducta": {
+            "perfil": "no conflictivo",
+            "expulsiones": 0
+        },
+
+        "listaAsignaturas": [
+        {
+            "id": "Mates",
+            "nota": 9,
+            "fechaExamen": "fecha",
+            "lugar": "GPS"
+        }, {
+            "id": "Lengua",
+            "nota": 5,
+            "fechaExamen": "fecha",
+            "lugar": "GPS"
+        }, {
+            "id": "Ingles",
+            "nota": 6,
+            "fechaExamen": "fecha"
+        }]
+    }
+}   
