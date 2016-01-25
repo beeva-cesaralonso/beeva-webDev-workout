@@ -35,17 +35,17 @@
 	        listaAsignaturas: [{
 	            id: 'Mates',
 	            nota: 9,
-	            fechaExamen: '12/02/2015',
+	            fechaExamen: 1430438400,
 	            lugar: 'GPS'
 	        }, {
 	            id: 'Lengua',
 	            nota: 5,
-	            fechaExamen: '03/01/2016',
+	            fechaExamen: 1442016000,
 	            lugar: 'GPS'
 	        }, {
 	            id: 'Inglés',
-	            nota: [8, 5],
-	            fechaExamen: '10/06/2015'
+	            nota: 7,
+	            fechaExamen: 1443916800
 	        }],
 	        informeConducta: {
 	            perfil: 'no conflictivo',
@@ -113,42 +113,58 @@
 		
 	}*/
 
-	//result = alumnos[?edad > `20`].[nombre, apellido]);
+	//Library tests
 
-	console.log(moment(alumno.);
+	var max = jmespath.search(alumno.expediente.listaAsignaturas, 'max_by([*], &nota).id');
+	console.log('Asignatura con nota máxima: ' + max);
+
+	var dt = jmespath.search(alumno.expediente.listaAsignaturas, 'max_by([*], &fechaExamen).fechaExamen');
+	dt = moment(dt);
+	if (dt.isValid()) {
+		console.log(moment.unix(dt).format('YYYYMMDD'));
+		console.log(moment.unix(dt).format('L'));
+		console.log(moment.unix(dt).format('LLLL'));
+	} else {
+		console.log("Invalid date");
+	}
+
+	/*_.where(listOfPlays, {author: "Shakespeare", year: 1611});
+=> [{title: "Cymbeline", author: "Shakespeare", year: 1611},
+    {title: "The Tempest", author: "Shakespeare", year: 1611}]*/
+
 
     //------ EJEMPLO
-	function suma(param1, param2) {
-        var promise = Q.defer();
+	var suma = function (param1, param2) {
+        var p = Q.defer();
 
         setTimeout(function() {
-            promise.resolve(param1 + param2);
+            p.resolve(param1 + param2);
             //promise.reject(new Error(error));
-        }, 10);
-        return promise.promise;
+        }, 1000);
+        return p.promise;
     };
 
-    function resta(param1, param2) {
-        var promise = Q.defer();
+    var resta = function (param1, param2) {
+        var p = Q.defer();
 
         setTimeout(function() {
-            promise.resolve(param1 - param2);
+            p.resolve(param1 - param2);
             //promise.reject(new Error(error));
-        }, 10);
-        return promise.promise;
+        }, 1000);
+        return p.promise;
     };
 
-    function producto(param1, param2) {
-        var promise = Q.defer();
+    var producto = function (param1, param2) {
+        var p = Q.defer();
 
         setTimeout(function() {
-            promise.resolve(param1 * param2);
+            p.resolve(param1 * param2);
             //promise.reject(new Error(error));
-        }, 10);
-        return promise.promise;
+        }, 1000);
+        return p.promise;
     };
 
-    function result(s1, s2, s3) {
+    var result = function (s1, s2, s3) {
     	return(s1 + s2 + s3);
     }
 
@@ -159,9 +175,9 @@
          producto(1, 2)
     ]).then( function (promises) {
          console.log(result(promises[0], promises[1], promises[2]));
+    }).fail( function (error) {
+         console.log("A fatal error occurred");
     });
-
-    //TODO gestin de errores
 
 </script>
 
